@@ -9,21 +9,36 @@
       rel="shortcut icon"
       href="img/global/mariella-favicon.png"
       type="image/x-icon"
-      />
-      <script
+    />
+    <script
       src="https://unpkg.com/htmx.org@1.9.10"
       integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC"
       crossorigin="anonymous"
     ></script>
   </head>
+
   <body>
-<header>
-<nav data-hx-trigger="load" data-hx-swap="outerHTML" data-hx-get="global.header-nav.partial.html"></nav>
-<div data-hx-trigger="load" data-hx-swap="outerHTML" data-hx-get="index.header-hero.partial.html"></div>
-</header>
+    <header>
+      <nav
+        data-hx-trigger="load"
+        data-hx-swap="outerHTML"
+        data-hx-get="global.header-nav.partial.html"
+      ></nav>
+      <div
+        data-hx-trigger="load"
+        data-hx-swap="outerHTML"
+        data-hx-get="index.header-hero.partial.html"
+      ></div>
+    </header>
     <main>
       <section></section>
-      <section></section>
+      <!-- Dmytro Nesvyzhskiy -->
+      <section
+        data-hx-trigger="load"
+        data-hx-swap="outerHTML"
+        data-hx-get="index.bestsellers-carousel.partial.html"
+      ></section>
+      <!-- end Dmytro Nesvyzhskiy -->
       <section></section>
       <section></section>
       <section></section>
