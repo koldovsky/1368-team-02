@@ -1,42 +1,70 @@
-<div>
-  <h2>— Bestsellers</h2>
-  <p>The best occasional and day-to-day lingerie</p>
-</div>
 <section class="bestsellers-carousel">
-  <button class="bestsellers-carousel-button-prev"></button>
-  <div class="bestsellers-carousel-wrapper">
-    <img
-      width="344"
-      height="441.06"
-      src="img/bestsellers-carousel/bestsellers_carousel_basic.png"
-      alt="Basic lingerie"
-    />
-    <span>Basic</span>
-    <span><a href="#">Browse</a></span>
-    <img
-      width="344"
-      height="441.06"
-      src="img/bestsellers-carousel/bestsellers_carousel_limited.png"
-      alt="Limited lingerie"
-    />
-    <span>Limited</span>
-    <span><a href="#">Browse</a></span>
-    <img
-      width="344"
-      height="441.06"
-      src="img/bestsellers-carousel/bestsellers_carousel_sets.png"
-      alt="Lingerie sets"
-    />
-    <span>Sets</span>
-    <span><a href="#">Browse</a></span>
-    <img
-      width="344"
-      height="441.06"
-      src="img/bestsellers-carousel/bestsellers_carousel_swimwear.png"
-      alt="Swimwear sets"
-    />
-    <span>Swimwear</span>
-    <span><a href="#">Browse</a></span>
-    <button class="bestsellers-carousel-button-next"></button>
+  <div class="bestsellers-carousel-container">
+    <div class="bestsellers-carousel-header">
+      <h2 class="bestsellers-carousel-title">— Bestsellers</h2>
+      <p class="bestsellers-carousel-subtitle">
+        The best occasional and day-to-day lingerie
+      </p>
+    </div>
+
+    <button
+      class="bestsellers-carousel-button bestsellers-carousel-button--prev"
+      aria-label="Previous"
+    ></button>
+
+    <div class="bestsellers-carousel-wrapper">
+      <div class="bestsellers-carousel-item">
+        <img
+          class="bestsellers-carousel-image"
+          width="344"
+          height="441"
+          src="img/bestsellers-carousel/bestsellers_carousel_basic.png"
+          alt="Basic lingerie"
+        />
+        <p class="bestsellers-carousel-text">Basic</p>
+        <button class="bestsellers-carousel-button-browse">Browse</button>
+      </div>
+
+      <div class="bestsellers-carousel-item">
+        <img
+          class="bestsellers-carousel-image"
+          width="344"
+          height="441"
+          src="img/bestsellers-carousel/bestsellers_carousel_limited.png"
+          alt="Limited lingerie"
+        />
+        <p class="bestsellers-carousel-text">Limited</p>
+        <button class="bestsellers-carousel-button-browse">Browse</button>
+      </div>
+
+      <div class="bestsellers-carousel-item">
+        <img
+          class="bestsellers-carousel-image"
+          width="344"
+          height="441"
+          src="img/bestsellers-carousel/bestsellers_carousel_sets.png"
+          alt="Lingerie sets"
+        />
+        <p class="bestsellers-carousel-text">Sets</p>
+        <button class="bestsellers-carousel-button-browse">Browse</button>
+      </div>
+
+      <div class="bestsellers-carousel-item">
+        <img
+          class="bestsellers-carousel-image"
+          width="344"
+          height="441"
+          src="img/bestsellers-carousel/bestsellers_carousel_swimwear.png"
+          alt="Swimwear sets"
+        />
+        <p class="bestsellers-carousel-text">Swimwear</p>
+        <button class="bestsellers-carousel-button-browse">Browse</button>
+      </div>
+    </div>
+
+    <button
+      class="bestsellers-carousel-button bestsellers-carousel-button--next"
+      aria-label="Next"
+    ></button>
   </div>
 </section>
