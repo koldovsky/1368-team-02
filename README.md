@@ -34,3 +34,4 @@ Anastasia Mishchenko
 Dmytro Nesvyzhskiy
 Volodymyr Kraievskyi
 Adrian-Mykola Zhovnir
+Vladyslav Shukel
