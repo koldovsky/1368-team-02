@@ -33,3 +33,4 @@ Oleksandra Krasna
 Anastasia Mishchenko
 Dmytro Nesvyzhskiy
 Volodymyr Kraievskyi
+Adrian-Mykola Zhovnir
