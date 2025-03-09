@@ -35,3 +35,4 @@ Dmytro Nesvyzhskiy
 Volodymyr Kraievskyi
 Adrian-Mykola Zhovnir
 Vladyslav Shukel
+Tsaruk Max
