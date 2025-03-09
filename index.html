@@ -9,13 +9,14 @@
       rel="shortcut icon"
       href="img/global/mariella-favicon.png"
       type="image/x-icon"
-      />
-      <script
+    />
+    <script
       src="https://unpkg.com/htmx.org@1.9.10"
       integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC"
       crossorigin="anonymous"
     ></script>
   </head>
+
   <body>
     <!-- Aleksandra Krasna-->
 <header class="header">
@@ -23,13 +24,45 @@
 <div data-hx-trigger="load" data-hx-swap="outerHTML" data-hx-get="index.header-hero.partial.html"></div>
 </header>
 <!--end Aleksandra Krasna-->
+    <header class="header">
+      <nav
+        data-hx-trigger="load"
+        data-hx-swap="outerHTML"
+        data-hx-get="index.header-nav.partial.html"
+      ></nav>
+      <div
+        data-hx-trigger="load"
+        data-hx-swap="outerHTML"
+        data-hx-get="index.header-xxl.partial.html"
+      ></div>
+    </header>
+>>>>>>> 3abae5144e0936227ba3ecd08762e9f00fc01580
     <main>
       <section></section>
+      <!-- Dmytro Nesvyzhskiy -->
+      <section
+        data-hx-trigger="load"
+        data-hx-swap="outerHTML"
+        data-hx-get="index.bestsellers-carousel.partial.html"
+      ></section>
+      <!-- end Dmytro Nesvyzhskiy -->
       <section></section>
       <section></section>
-      <section></section>
-      <section></section>
-      <section></section>
+      <!-- Mykhailo Kusynko -->
+      <section
+        data-hx-trigger="load"
+        data-hx-swap="outerHTML"
+        data-hx-get="index.lookbook.partial.html"
+      ></section>
+      <!-- end Mykhailo Kusynko -->
+      <!--Kraievskyi Volodymyr -->
+      <section
+        class="photo-carousel"
+        data-hx-trigger="load"
+        data-hx-swap="outerHTML"
+        data-hx-get="index.contact-us.partial.html"
+      ></section>
+      <!-- end Kraievskyi Volodymyr-->
       <!-- Mishchenko Anastasia -->
       <section
         class="photo-carousel"
