@@ -4,21 +4,26 @@ This template repository includes preconfigured GitHub Action that will validate
 And htmx to load partials
 
 ```html
-<main data-hx-trigger="load" data-hx-swap="outerHTML" data-hx-get="index.main.partial.html"></main>
+<main
+  data-hx-trigger="load"
+  data-hx-swap="outerHTML"
+  data-hx-get="index.main.partial.html"
+></main>
 ```
-
 
 ```js
 function init() {
-    import('...js');
+  import("...js");
 }
 
-const totalPartials = document.querySelectorAll('[hx-trigger="load"], [data-hx-trigger="load"]').length;
+const totalPartials = document.querySelectorAll(
+  '[hx-trigger="load"], [data-hx-trigger="load"]'
+).length;
 let loadedPartialsCount = 0;
 
-document.body.addEventListener('htmx:afterOnLoad', () => {
-    loadedPartialsCount++;
-    if (loadedPartialsCount === totalPartials) init();
+document.body.addEventListener("htmx:afterOnLoad", () => {
+  loadedPartialsCount++;
+  if (loadedPartialsCount === totalPartials) init();
 });
 ```
 
@@ -29,9 +34,13 @@ Add the data-proofer-ignore attribute to any tag to ignore it from every check.
 ```
 
 #Team
-Oleksandra Krasna 
-Anastasia Mishchenko
-Dmytro Nesvyzhskiy
-Volodymyr Kraievskyi
-Adrian-Mykola Zhovnir
-Vladyslav Shukel
+
+<ul>
+  <li>Oleksandra Krasna</li> 
+  <li>Anastasia Mishchenko</li>
+  <li>Dmytro Nesvyzhskiy</li>
+  <li>Volodymyr Kraievskyi</li>
+  <li>Adrian-Mykola Zhovnir</li>
+  <li>Vladyslav Shukel</li>
+  <li>Mykhailo Kusynko</li>
+</ul>
