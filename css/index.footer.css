@@ -21,48 +21,53 @@
       padding: 0 15px;
       text-align: center;
       flex-direction: column;
-    }
-    .footer__nav-list-container {
-      padding: -10px -5px;
-    }
-    .footer__nav-item {
-      list-style: none;
-      margin: 10px 5px;
-    }
-    .footer__nav-link {
-      color: var(--dark-accent-color);
-      text-decoration: none;
-      font-size: 16px;
-      font-weight: 400;
-      align-items: center;
+
+      .footer__nav-list-container {
+        padding: -10px -5px;
+
+        .footer__nav-item {
+          list-style: none;
+          margin: 10px 5px;
+
+          .footer__nav-link {
+            color: var(--dark-accent-color);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 400;
+            align-items: center;
+          }
+        }
+      }
     }
     .footer__subscribe {
       margin-top: 50px;
       padding: 0 15px;
       text-align: center;
-    }
-    .footer__subscribe-input {
-      border-color: #555555;
-      background-color: rgba(203, 203, 203, 0.12);
-      width: 100%;
-      padding: 12px;
-      border: none;
-      font-size: 16px;
-      text-align: center;
-      color: #666;
-      outline: none;
-    }
-    .footer__subscribe-button {
-      display: block;
-      background-color: var(--button-secondary-color);
-      color: var(--button-text-color);
-      border: 2px;
-      padding: 10px 20px;
-      margin-top: 12px;
-      cursor: pointer;
-      width: 100%;
-      font-weight: 700;
-      font-size: 16px;
+
+      .footer__subscribe-input {
+        border-color: #555555;
+        background-color: rgba(203, 203, 203, 0.12);
+        width: 100%;
+        padding: 12px;
+        border: none;
+        font-size: 16px;
+        text-align: center;
+        color: #666;
+        outline: none;
+      }
+
+      .footer__subscribe-button {
+        display: block;
+        background-color: var(--button-secondary-color);
+        color: var(--button-text-color);
+        border: 2px;
+        padding: 10px 20px;
+        margin-top: 12px;
+        cursor: pointer;
+        width: 100%;
+        font-weight: 700;
+        font-size: 16px;
+      }
     }
   }
   .footer__bottom {
