@@ -15,9 +15,10 @@
       integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="css/index.css" />
   </head>
-
   <body>
+    <!-- Aleksandra Krasna-->
     <header class="header">
       <nav
         data-hx-trigger="load"
@@ -27,9 +28,10 @@
       <div
         data-hx-trigger="load"
         data-hx-swap="outerHTML"
-        data-hx-get="index.header-xxl.partial.html"
+        data-hx-get="index.header-hero.partial.html"
       ></div>
     </header>
+    <!--end Aleksandra Krasna-->
     <main>
       <section></section>
       <!-- Dmytro Nesvyzhskiy -->
@@ -41,8 +43,39 @@
       <!-- end Dmytro Nesvyzhskiy -->
       <section></section>
       <section></section>
-      <section></section>
-      <section></section>
+      <!-- Mykhailo Kusynko -->
+      <section
+        data-hx-trigger="load"
+        data-hx-swap="outerHTML"
+        data-hx-get="index.lookbook.partial.html"
+      ></section>
+      <!-- end Mykhailo Kusynko -->
+       
+      <!--Tsaruk Max -->
+      <section
+        class="vacancy-form"
+        data-hx-trigger="load"
+        data-hx-swap="outerHTML"
+        data-hx-get="index.vacancy-form.partial.html"
+      ></section>
+      <!-- end Tsaruk Max-->
+
+      <!--Kraievskyi Volodymyr -->
+      <section
+        class="contact-us"
+        data-hx-trigger="load"
+        data-hx-swap="outerHTML"
+        data-hx-get="index.contact-us.partial.html"
+      ></section>
+      <!-- end Kraievskyi Volodymyr-->
+      <!-- Adrian-Mykola Zhovnir -->
+      <section 
+      class="handmade"
+      data-hx-trigger="load" 
+      data-hx-swap="outerHTML" 
+      data-hx-get="index.handmade-lingerie.partial.html"
+      ></section>
+      <!-- end Adrian-Mykola Zhovnir -->
       <!-- Mishchenko Anastasia -->
       <section
         class="photo-carousel"
@@ -50,6 +83,13 @@
         data-hx-swap="outerHTML"
         data-hx-get="index.photo-carousel.partial.html"
       ></section>
+      <!-- Shukel Vladyslav -->
+      <section
+        data-hx-trigger="load"
+        data-hx-swap="outerHTML"
+        data-hx-get="index.shopping-cart.partial.html"
+      ></section>
+      <!-- end Shukel Vladyslav -->
     </main>
     <footer
       class="footer"
