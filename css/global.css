@@ -26,7 +26,13 @@ img {
   max-width: 100%;
 }
 
-h1,
+h1 {
+  font-family: "Cormorant Garamond", serif;
+  color: #555555;
+}
+
+
 h2 {
   font-family: "Cormorant Garamond", serif;
+  color: #303030;
 }
