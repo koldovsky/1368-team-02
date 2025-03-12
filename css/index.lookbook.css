@@ -1,0 +1,30 @@
+.lookbook {
+  padding: 90px 24px;
+  /* background-color: var(--page-default-background); */
+
+  .lookbook__header {
+    margin: 0 15px;
+    display: flex;
+    flex-direction: column;
+
+    .lookbook__header-content {
+      display: flex;
+      justify-content: center;
+      color: var(--text-color-lookbook);
+      font-size: 40px;
+      letter-spacing: -0.84px;
+      vertical-align: baseline;
+
+      .lookbook__header-separator {
+        color: var(--light-accent-color);
+      }
+    }
+    .lookbook__header-text {
+      text-align: center;
+      margin-top: 25px;
+      font-size: 20px;
+      font-stretch: 100%;
+      font-weight: 400;
+    }
+  }
+}

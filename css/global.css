@@ -9,11 +9,14 @@
 }
 
 :root {
-  --button-text-color: #fff; 
+  --button-text-color: #fff;
   --button-primary-color: #303030;
   --button-secondary-color: #c5af93;
-  --text-color: #6b6b6b;  
+  --text-color: #6b6b6b;
   --dark-accent-color: #555555;
+  --page-default-background: #f7f8fa;
+  --text-color-lookbook: rgb(48, 48, 48);
+  --light-accent-color: #f6f0e9;;
   font-family: "Fira Sans", sans-serif;
   scroll-behavior: smooth;
 }
