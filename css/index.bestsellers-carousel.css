@@ -1,0 +1,16 @@
+.bestsellers-carousel__title {
+    text-align: center;
+    font-size: 60px;
+    color: #303030;
+}
+
+.bestsellers-carousel__subtitle {
+    text-align: center;
+    font-size: 20px;
+    color: #555555;
+}
+
+.bestsellers-carousel__image {
+    padding: 15px;
+}
+
