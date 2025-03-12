@@ -21,7 +21,7 @@
   --color-text-block-title: #303030;
   --color-brand-primary: #c5af93;
   --color-link-default: #222222;
-  --color-link-hover: #dc2d2d;
+  --color-link-hover: #c5af93;;
   --color-heading-primary: #35302f;
   --color-heading-secondary: #f9ffee;
   --color-quote-text: #6b6b6b;
@@ -102,4 +102,9 @@ h1 {
 h2 {
   font-family: var(--font-secondary);
   color: var(--color-text-block-title);
+}
+
+.container{
+  max-width: 1200px;
+  margin: auto;
 }
