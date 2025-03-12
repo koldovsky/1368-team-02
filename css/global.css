@@ -89,7 +89,6 @@
   --content-padding: 0 15px;
 }
 
-
 img {
   display: block;
   max-width: 100%;
@@ -100,8 +99,7 @@ h1 {
   color: var(--color-text-primary);
 }
 
-
 h2 {
   font-family: var(--font-secondary);
-  color: var(--color-text-block-title)
+  color: var(--color-text-block-title);
 }
