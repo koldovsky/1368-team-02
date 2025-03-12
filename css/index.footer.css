@@ -31,7 +31,7 @@
           margin: 10px 5px;
 
           .footer__nav-link {
-            color: var(--dark-accent-color);
+            color: var(--color-text-primary);
             text-decoration: none;
             font-size: 16px;
             font-weight: 400;
@@ -46,21 +46,21 @@
       text-align: center;
 
       .footer__subscribe-input {
-        border-color: #555555;
-        background-color: rgba(203, 203, 203, 0.12);
+        border-color: var(--color-input-border);
+        background-color: var(--color-input-background);
+        color: var(--color-text-block-title);
         width: 100%;
         padding: 12px;
         border: none;
         font-size: 16px;
         text-align: center;
-        color: #666;
         outline: none;
       }
 
       .footer__subscribe-button {
         display: block;
-        background-color: var(--button-secondary-color);
-        color: var(--button-text-color);
+        background-color: var(--color-button-secondary);
+        color: var(--color-button-primary-text);
         border: 2px;
         padding: 10px 20px;
         margin-top: 12px;
@@ -70,7 +70,7 @@
         font-size: 16px;
 
         &:hover {
-          background-color: var(--button-primary-color);
+          background-color: var(--color-button-secondary-hover);
         }
       }
     }
@@ -80,7 +80,7 @@
     align-items: center;
     text-align: center;
     font-size: 14px;
-    color: var(--text-color);
+    color: var(--color-text-secondary);
     .footer__rights {
       margin-top: 20px;
     }

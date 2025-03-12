@@ -28,8 +28,11 @@
   --color-quote-background: #fff;
   --color-caption-text: #6b6b6b;
   --color-caption-text-light: #b5b5b5;
+  --color-input-border: #555555;
+  --color-input-background: rgba(203, 203, 203, 0.12);
   --color-button-primary: #303030;
   --color-button-primary-hover: #c5af93;
+  --color-button-primary-text: #fff;
   --color-button-secondary: #c5af93;
   --color-button-secondary-hover: #303030;
   --color-media-placeholder: #d8d8d8;
