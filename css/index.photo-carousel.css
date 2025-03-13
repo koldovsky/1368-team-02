@@ -1,3 +1,4 @@
+/* Anastasiia Mishchenko */
 .photo-carousel {
   display: flex;
   justify-content: center;
@@ -17,14 +18,18 @@
 }
 .photo-carousel__image {
   width: 100%;
-  max-width: 100%;
+  max-width: 28rem;
   height: auto;
   object-fit: cover;
   flex-shrink: 0;
 }
 
+.photo-carousel__icon {
+    width: 1rem;
+}
+
 /* Responsive layouts */
-@media (max-width: 350px) {
+@media (min-width: 350px) {
   .photo-carousel__image {
     width: 100vw;
   }
