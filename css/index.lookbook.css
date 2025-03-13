@@ -1,30 +1,47 @@
 .lookbook {
   padding: 90px 24px;
-  /* background-color: var(--page-default-background); */
+  background-color: var(--color-white);
 
   .lookbook__header {
-    margin: 0 15px;
+    margin: var(--content-padding);
     display: flex;
     flex-direction: column;
 
     .lookbook__header-content {
       display: flex;
       justify-content: center;
-      color: var(--text-color-lookbook);
+      color: var(--color-text-primary);
       font-size: 40px;
+      font-family: var(--font-secondary);
+      font-weight: var(--font-weight-medium);
       letter-spacing: -0.84px;
-      vertical-align: baseline;
 
       .lookbook__header-separator {
-        color: var(--light-accent-color);
+        color: var(--color-background-primary);
       }
     }
     .lookbook__header-text {
+      font-family: var(--font-primary);
       text-align: center;
+      color: var(--color-text-primary);
       margin-top: 25px;
-      font-size: 20px;
+      font-size: var(--font-size-subheading);
       font-stretch: 100%;
-      font-weight: 400;
+      font-weight: var(--font-weight-regular);
+    }
+  }
+
+  .lookbook__photos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 45px;
+    gap: 15px;
+
+    .lookbook__photo {
+      width: 100%;
+      max-width: 350px;
+      height: 86px;
+      object-fit: cover;
     }
   }
 }
