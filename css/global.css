@@ -12,6 +12,7 @@
   --button-text-color: #fff; 
   --button-primary-color: #303030;
   --button-secondary-color: #c5af93;
+  --section-title-color: #303030;
   --text-color: #6b6b6b;  
   --dark-accent-color: #555555;
   font-family: "Fira Sans", sans-serif;
@@ -25,11 +26,11 @@ img {
 
 h1 {
   font-family: "Cormorant Garamond", serif;
-  color: #555555;
+  color: var(--dark-accent-color);
 }
 
 
 h2 {
   font-family: "Cormorant Garamond", serif;
-  color: #303030;
+  color: var(--section-title-color);
 }
