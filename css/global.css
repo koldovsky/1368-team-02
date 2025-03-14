@@ -36,6 +36,8 @@
   --color-button-secondary: #c5af93;
   --color-button-secondary-hover: #303030;
   --color-media-placeholder: #d8d8d8;
+  --color-separator: #f6f0e9;
+  --color-socials-hover: rgb(179, 150, 114);
 
   /* Шрифти */
   --font-primary: 'Fira Sans', sans-serif;
@@ -54,6 +56,7 @@
   --font-size-heading: 22px;
   --font-size-heading-lg: 47px;
   --font-size-hero: 145px;
+  --font-size-title: 40px;
 
   /* Висота рядка */
   --line-height-default: 1.5;
