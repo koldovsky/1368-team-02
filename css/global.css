@@ -12,6 +12,7 @@
 :root {
   /* Основні кольори */
   --color-white: #fff;
+  --page-default-background: #f7f8fa;
   --color-background-primary: #f6f0e9;
   --color-background-secondary: #303030;
   --color-text-primary: #555555;
