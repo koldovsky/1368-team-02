@@ -1,7 +1,10 @@
 @import "./global.css";
-@import "./index.photo-carousel.css";
-@import "./index.footer.css";
+@import "./index.bestsellers-carousel.css";
 @import "./index.coming-soon.css";
 @import "./index.lookbook.css";
-@import "./index.bestsellers-carousel.css";
-@import "./index.contact-us.css"
+@import "./index.contact-us.css";
+@import "./index.subscribe-confirm-modal.css";
+@import "./index.photo-carousel.css";
+@import "./index.footer.css";
+
+/* Don't forget to change the order of CSS files: Header → Footer. */
