@@ -11,7 +11,7 @@
         font-size: 50px;
     }
 
-    @media (min-width: 1200px) {
+    @media (min-width: 1024px) {
         font-size: 60px;
     }
 }
@@ -49,6 +49,29 @@
 }
 
 .bestsellers-carousel__browse-button {
+    width: 141.7px;
+    height: 52px;
+    background-color: var(--color-button-secondary);
+    color: var(--color-button-primary-text);
+    font-family: var(--font-primary);
+    font-size: var(--font-size-default);
+    font-weight: 700;
+    border-width: 2px;
+    border-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.4s ease-in;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+
+    &:hover {
+        background-color: var(--color-button-secondary-hover);
+    }
+}
+
+
+/* .bestsellers-carousel__browse-button {
     display: block;
     width: fit-content;
     margin: 0 auto;
@@ -58,4 +81,4 @@
     font-family: var(--font-primary);
     font-weight: bold;
 }
-
+ */
