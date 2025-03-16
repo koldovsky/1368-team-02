@@ -44,4 +44,5 @@ Add the data-proofer-ignore attribute to any tag to ignore it from every check.
   <li>Vladyslav Shukel</li>
   <li>Mykhailo Kusynko</li>
   <li>Tsaruk Max</li>
+  <li>Anton Orlov</li>
 </ul>
