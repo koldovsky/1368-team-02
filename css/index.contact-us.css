@@ -1,79 +1,121 @@
 /* Kraievskyi Volodymyr */
-/* Made mobile, responsiveness coming soon */
 .contact-us {
-  padding: 90px 24px;
+  padding: 90px 0;
   background-color: var(--color-white);
-
-  .contact-us__header {
-    .contact-us__title-separator {
-      font-family: var(--font-secondary);
-      color: var(--color-separator);
-    }
-
-    .contact-us__title {
-      font-size: var(--font-size-title);
-    }
-
-    .contact-us__description {
-      margin-top: 25px;
-      font-family: var(--font-primary);
-      font-size: var(--font-size-subheading);
-      color: var(--color-text-primary);
-    }
+  @media (min-width: 768px) {
+    padding: 105px 0;
+  }
+  @media (min-width: 992px) {
+    padding: 120px 0;
   }
 
-  .contact-us__info {
-    color: var(--color-text-secondary);
-    font-family: var(--font-primary);
-    font-size: var(--font-size-default);
-    margin-top: 25px;
+  .contact-us__inner {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
 
-    .contact-us__address-title,
-    .contact-us__worktime-title,
-    .contact-us__contacts-title {
-      color: var(--color-text-primary);
-      font-size: var(--font-size-heading);
-    }
+    .contact-us__header {
+      .contact-us__title-separator {
+        font-family: var(--font-secondary);
+        color: var(--color-separator);
+      }
 
-    .contact-us__worktime,
-    .contact-us__address {
-      margin-bottom: 16px;
-
-      .contact-us__worktime-text {
+      .contact-us__title {
+        font-size: var(--font-size-title);
         margin: 0;
       }
+
+      .contact-us__description {
+        margin-top: 25px;
+        font-family: var(--font-primary);
+        font-size: var(--font-size-subheading);
+        color: var(--color-text-primary);
+      }
     }
 
-    .contact-us__contacts-link {
-      text-decoration: none;
+    .contact-us__info {
       color: var(--color-text-secondary);
-    }
+      font-family: var(--font-primary);
+      font-size: var(--font-size-default);
+      margin-top: 25px;
 
-    .contact-us__socials {
-      list-style: none;
-      padding: 0;
-      margin-top: 30px;
-      display: flex;
-      gap: 15px;
-
-      .contact-us__social-item {
-        fill: var(--color-button-secondary);
+      .contact-us__address-title,
+      .contact-us__worktime-title,
+      .contact-us__contacts-title {
+        color: var(--color-text-primary);
+        font-size: var(--font-size-heading);
       }
 
-      .contact-us__social-item:hover {
-        fill: var(--color-socials-hover);
+      .contact-us__worktime,
+      .contact-us__address {
+        margin-bottom: 16px;
+
+        .contact-us__worktime-text {
+          margin: 0;
+        }
+      }
+
+      .contact-us__contacts-link {
+        text-decoration: none;
+        color: var(--color-text-secondary);
+      }
+
+      .contact-us__socials {
+        list-style: none;
+        padding: 0;
+        margin-top: 30px;
+        display: flex;
+        gap: 15px;
+
+        .contact-us__social-item {
+          fill: var(--color-button-secondary);
+        }
+
+        .contact-us__social-item:hover {
+          fill: var(--color-socials-hover);
+        }
+      }
+    }
+
+    .contact-us__map-container {
+      margin-top: 34px;
+
+      .contact-us__map-iframe {
+        width: 100%;
+        max-width: 640.83px;
+        height: 502px;
+        filter: grayscale(100%);
       }
     }
   }
+  @media (min-width: 768px) {
+    .contact-us__inner {
+      grid-template-columns: 42% 58%;
+      padding: 0 32px;
 
-  .contact-us__map-container {
-    margin-top: 50px;
-
-    .contact-us__map-iframe {
-      width: 100%;
-      max-width: 640.83px;
-      height: 502px;
-      filter: grayscale(100%);
+      .contact-us__content {
+        padding-right: 15px;
+        .contact-us__title {
+          font-size: 50px;
+        }
+      }
+      .contact-us__map-container {
+        margin-top: 0;
+        display: flex;
+        justify-content: flex-end;
+        padding-left: 15px;
+      }
+    }
+  }
+  @media (min-width: 992px) {
+    .contact-us__inner {
+      padding: 0 40px;
+      .contact-us__content {
+        .contact-us__title {
+          font-size: 60px;
+        }
+      }
     }
   }
 }
