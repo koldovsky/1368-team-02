@@ -1,6 +1,6 @@
 .lookbook {
   padding: 90px 24px;
-  background-color: var(--page-default-background);
+  /* background-color: var(--page-default-background); */
 
   .lookbook__header {
     margin: var(--content-padding);
@@ -53,13 +53,23 @@
       }
     }
 
-    @media(min-width: 480px) {
+    @media (min-width: 480px) {
       .lookbook__photo-item {
-        position: relative;
-        overflow: hidden;
-        aspect-ratio: 1 / 1;
         margin-top: 15px;
         padding: 0 7.5px;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .lookbook {
+    padding: 97.5px 32px 105px;
+
+    .lookbook__header {
+      .lookbook__header-content {
+        font-size: 50px;
+        letter-spacing: -1.05px;
       }
     }
   }
