@@ -30,10 +30,22 @@ function greet (name, owner) {
   return name === owner ? "Hello boss" : "Hello guest";
 }
 
+function greet (name, owner) {
+    if (name === owner){
+      return "Hello boss"
+    }else{
+      return "Hello guest"
+    }
+  }
+
 // Keep Hydrated https://www.codewars.com/kata/keep-hydrated-1/train/javascript
 
 function litres(time) {
   return parseInt(time * 0.5);
+}
+
+function litres(time) {
+  return Math.floor(time * 0.5);
 }
 
 // Opposites Attract https://www.codewars.com/kata/555086d53eac039a2a000083/train/javascript
@@ -41,3 +53,11 @@ function litres(time) {
 function lovefunc(flower1, flower2){
   return !! (flower1 % 2 > 0 ^ flower2 % 2 > 0);
 }
+
+function lovefunc(flower1, flower2){
+    if ((flower1 % 2 === 0 && flower2 % 2 !== 0) || (flower1 % 2 !== 0 && flower2 % 2 === 0)) {
+          return true; 
+      } else {
+          return false; 
+      }
+  }
