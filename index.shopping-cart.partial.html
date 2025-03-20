@@ -1,34 +1,42 @@
-<div class="shopping-cart">
-    <h2>Shopping cart</h2>
-    <div class="shopping-cart__products">
-        <p>Products</p>
-        <div class="shopping-cart__products__items">
+<button class="open-modal-btn">Open Cart</button>
 
+<div class="shopping-cart" id="shoppingCartModal">
+    <div class="shopping-cart__content">
+        <header class="shopping-cart__header">
+            <p>Shopping cart</p>
+            <span class="modal__close">&times;</span>
+        </header>
+        <div class="shopping-cart__products">
+            <div class="shopping-cart__products__heading">Products</div>
+            <div class="shopping-cart__products__items">
+                
+            </div>
+            <button class="shopping-cart__promocode">Promo code</button>
+            <input class="shopping-cart__promocode__input" type="text" placeholder="Enter promo code" maxlength="20">
+            <button class="shopping-cart__button-ok">OK</button>
         </div>
-        <p class="shopping-cart__promocode">Promocode</p>
-        <input type="text">
-        <button>OK</button>
+        <div class="shopping-cart__customer-details">
+            <header class="shopping-cart__customer-details__header">Place in order</header>
+            <form action="">
+                <div class="shopping-cart__customer-details__name">
+                    <h3>Name <span class="asterisk"></span></h3>
+                    <input type="name" name="" id="shopping-cart__customer-details__name">
+                </div>
+                <div class="shopping-cart__customer-details__emeil">
+                    <h3>Emeil <span class="asterisk"></span></h3>
+                    <input type="emeil" name="" id="shopping-cart__customer-details__emeil">
+                </div>
+                <div class="shopping-cart__customer-details__phone">
+                    <h3>Phone <span class="asterisk"></span></h3>
+                    <input type="phone" name="" id="shopping-cart__customer-details__phone">
+                </div>
+                <div class="shopping-cart__customer-details__comment">
+                    <h3>Comment <span class="asterisk"></span></h3>
+                    <textarea name="" id="shopping-cart__customer-details__comment"></textarea>
+                </div>
+                <button>Order</button>
+            </form>
+        </div>
     </div>
-    <div class="shopping-cart__customer-details">
-        <h2>Place in order</h2>
-        <form action="">
-            <div class="shopping-cart__customer-details__name">
-                <h3>Name <span class="asterisk"></span></h3>
-                <input type="name" name="" id="shopping-cart__customer-details__name">
-            </div>
-            <div class="shopping-cart__customer-details__emeil">
-                <h3>Emeil <span class="asterisk"></span></h3>
-                <input type="emeil" name="" id="shopping-cart__customer-details__emeil">
-            </div>
-            <div class="shopping-cart__customer-details__phone">
-                <h3>Phone <span class="asterisk"></span></h3>
-                <input type="phone" name="" id="shopping-cart__customer-details__phone">
-            </div>
-            <div class="shopping-cart__customer-details__comment">
-                <h3>Comment <span class="asterisk"></span></h3>
-                <textarea name="" id="shopping-cart__customer-details__comment"></textarea>
-            </div>
-            <button>Order</button>
-        </form>
-    </div>
-</div>
+</div> 
+
