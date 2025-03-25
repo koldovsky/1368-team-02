@@ -1,5 +1,6 @@
 function init() {
     import('./index.photo-carousel.js');
+    import('./index.coming-soon.js');
 }
 
 const totalPartials = document.querySelectorAll('[hx-trigger="load"], [data-hx-trigger="load"]').length;
