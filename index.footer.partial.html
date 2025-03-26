@@ -40,7 +40,13 @@
 
     <div class="footer__content-flex-item">
       <div class="footer__subscribe">
-        <form action="https://formspree.io/f/moveadnv" method="POST">
+        <form class="footer__form" action="https://api.web3forms.com/submit" method="POST">
+          <!-- Replace with your Access Key -->
+          <input
+            type="hidden"
+            name="access_key"
+            value="92f43548-dd88-4734-acf1-9636579faceb"
+          />
           <input
             type="email"
             name="email"
@@ -49,9 +55,18 @@
             required
             aria-label="Enter your email"
           />
+          <!-- Honeypot Spam Protection -->
+          <input
+            type="checkbox"
+            name="botcheck"
+            class="hidden"
+            style="display: none"
+          />
+
           <button type="submit" class="footer__subscribe-button">
             Subscribe
           </button>
+          <div class="footer__form-result"></div>
         </form>
       </div>
     </div>

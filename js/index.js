@@ -1,5 +1,6 @@
 function init() {
     import('./index.photo-carousel.js');
+    import('./index.footer.subscribe.js')
     import('./index.coming-soon.js');
     import("./shopping-cart.js");
 }
