@@ -28,8 +28,13 @@
 .modal__close {
     position: absolute;
     right: 15px;
+    top:10px;
     font-size: 24px;
     cursor: pointer;
+}
+.modal-close-btn {
+    margin: 0;
+    padding: 0;
 }
 .shopping-cart__header-text{
     display: flex;
@@ -161,11 +166,13 @@ textarea.form-inputs {
     font-weight: bold;
     border: none;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .order:hover {
     background: var(--color-button-primary-hover);
 }
+
 @media(max-width: 1100px) {
     .shopping-cart__content {
         width: 550px;

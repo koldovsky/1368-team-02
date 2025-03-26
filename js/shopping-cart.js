@@ -1,6 +1,6 @@
 const modal = document.getElementById("shoppingCartModal");
 const openModalBtn = document.querySelector(".open-modal-btn");
-const closeModal = document.querySelector(".modal__close");
+const closeModalBtn = document.querySelector(".modal-close-btn");
 const promo = document.querySelector(".shopping-cart__promocode");
 const inputBlock = document.querySelector(".shopping-cart__promocode__input-block");
 
@@ -9,9 +9,9 @@ openModalBtn.addEventListener("click", () => {
     document.body.style.overflow = "hidden";
 });
 
-closeModal.addEventListener("click", () => {
+closeModalBtn.addEventListener("click", () => {
+    modal.style.display = "none";
     document.body.style.overflow = "";
-    console.log("close");
 });
 
 promo.addEventListener("click", () => {
@@ -24,4 +24,3 @@ window.addEventListener("click", (e) => {
         document.body.style.overflow = "";
     }
 });
-
