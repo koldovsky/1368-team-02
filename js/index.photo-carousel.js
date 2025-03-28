@@ -8,27 +8,54 @@ const slides = [
 ];
 
 let currentSlideIdx = 0;
+let isTransitioning = false;
 
 function showSlide() {
+  if (isTransitioning) return;
+  isTransitioning = true;
+  
+  console.log('Showing slide:', currentSlideIdx);
   const slideContainer = document.querySelector(".photo-carousel__images");
-  slideContainer.innerHTML = slides[currentSlideIdx];
-  if (window.matchMedia("(min-width: 350px)").matches) {
+  const slidesContainer = document.createElement('div');
+  slidesContainer.style.display = 'flex';
+  slidesContainer.style.width = '100%';
+  
+  // Add current slide
+  slidesContainer.innerHTML = slides[currentSlideIdx];
+  
+  // Add responsive slides
+  if (window.matchMedia("(min-width: 479px)").matches) {
     const secondSlideIdx = (currentSlideIdx + 1) % slides.length;
-    slideContainer.innerHTML += slides[secondSlideIdx];
-    if (window.matchMedia("(min-width: 479px)").matches) {
+    slidesContainer.innerHTML += slides[secondSlideIdx];
+    
+    if (window.matchMedia("(min-width: 768px)").matches) {
       const thirdSlideIdx = (secondSlideIdx + 1) % slides.length;
-      slideContainer.innerHTML += slides[thirdSlideIdx];
-      if (window.matchMedia("(min-width: 768px)").matches) {
+      slidesContainer.innerHTML += slides[thirdSlideIdx];
+      
+      if (window.matchMedia("(min-width: 991px)").matches) {
         const fourthSlideIdx = (thirdSlideIdx + 1) % slides.length;
-        slideContainer.innerHTML += slides[fourthSlideIdx];
-        if (window.matchMedia("(min-width: 991px)").matches) {
-          const fifthSlideIdx = (fourthSlideIdx + 1) % slides.length;
-          slideContainer.innerHTML += slides[fifthSlideIdx];
-        }
+        slidesContainer.innerHTML += slides[fourthSlideIdx];
+        const fifthSlideIdx = (fourthSlideIdx + 1) % slides.length;
+        slidesContainer.innerHTML += slides[fifthSlideIdx];
       }
     }
   }
+
+  // Preload images
+  const images = slidesContainer.getElementsByTagName('img');
+  const imagePromises = Array.from(images).map(img => {
+    return new Promise((resolve) => {
+      if (img.complete) resolve();
+      img.onload = resolve;
+    });
+  });
+
+  Promise.all(imagePromises).then(() => {
+    slideContainer.innerHTML = slidesContainer.innerHTML;
+    isTransitioning = false;
+  });
 }
+
 function nextSlide() {
   currentSlideIdx = (currentSlideIdx + 1) % slides.length;
   showSlide();

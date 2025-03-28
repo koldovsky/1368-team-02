@@ -12,14 +12,16 @@
 
     .photo-carousel__images {
       display: flex;
+      transition: transform 0.3s ease-in-out;
     }
   }
 }
 .photo-carousel__image {
   width: 100%;
-  max-width: 28rem;
+  max-width: auto;
   height: auto;
   object-fit: cover;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .photo-carousel__button {
