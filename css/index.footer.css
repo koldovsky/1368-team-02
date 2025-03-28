@@ -23,7 +23,7 @@
       flex-direction: column;
 
       .footer__nav-list-container {
-        padding: -10px -5px;
+        padding-left: 0;
 
         .footer__nav-item {
           list-style: none;
