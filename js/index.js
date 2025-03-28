@@ -3,6 +3,7 @@ function init() {
     import('./index.footer.subscribe.js')
     import('./index.coming-soon.js');
     import("./shopping-cart.js");
+    import('./index.subscribe-confirm-modal.js');
 }
 
 const totalPartials = document.querySelectorAll('[hx-trigger="load"], [data-hx-trigger="load"]').length;
