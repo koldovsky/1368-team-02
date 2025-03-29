@@ -1,39 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lingerie</title>
-  </head>
-  <body>
-    <section class="hero">
-      <div class="hero__content">
-        <h1 class="hero__title">Lingerie</h1>
-        <p class="hero__subtitle">
-          Products and services of the highest quality
-        </p>
-      </div>
-      <div class="vacancy">
-        <h2 class="vacancy-title">Want to work with us?</h2>
-        <p class="vacancy-description">
-          Send a request and get a complete list of our offers!
-        </p>
-        <form class="vacancy-form">
-          <label class="vacancy-label">
-            Name*
-            <input class="vacancy-input" type="text" name="name" required />
-          </label>
-          <label class="vacancy-label">
-            Phone number*
-            <input class="vacancy-input" type="tel" name="phone" required />
-          </label>
-          <label class="vacancy-label">
-            Email*
-            <input class="vacancy-input" type="email" name="email" required />
-          </label>
-          <button class="vacancy-button" type="submit">Request a quote</button>
-        </form>
-      </div>
-    </section>
-  </body>
-</html>
+<section class="vacancy-hero">
+  <div class="vacancy-hero__content">
+    <h1 class="vacancy-hero__title">Lingerie</h1>
+    <p class="vacancy-hero__subtitle">
+      Products and services of the highest quality
+    </p>
+  </div>
+  <div class="vacancy">
+    <h2 class="vacancy-title">Want to work with us?</h2>
+    <p class="vacancy-description">
+      Send a request and get a complete list of our offers!
+    </p>
+    <form class="vacancy-form">
+      <label class="vacancy-label">
+        Name*
+        <input class="vacancy-input" type="text" name="name" placeholder="Your name" required />
+      </label>
+      <label class="vacancy-label">
+        Phone number*
+        <input class="vacancy-input" type="tel" name="phone" placeholder="+1 (___) ___-____" required />
+      </label>
+      <label class="vacancy-label">
+        Email*
+        <input class="vacancy-input" type="email" name="email" placeholder="your.email@example.com" required />
+      </label>
+      <input type="checkbox" name="botcheck" class="hidden" style="display: none" />
+      <button class="vacancy-button" type="submit">Request a quote</button>
+    </form>
+  </div>
+</section>

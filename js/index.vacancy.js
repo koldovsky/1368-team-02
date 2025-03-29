@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   setTimeout(function () {
-    const form = document.querySelector(".footer__form");
-    const modal = document.querySelector(".subscribe-confirm-modal");
+    const form = document.querySelector(".vacancy-form");
+    const modal = document.querySelector(".vacancy-confirm-modal");
 
     if (!form || !modal) {
       return;
@@ -17,10 +17,15 @@ document.addEventListener("DOMContentLoaded", function () {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
 
-      const emailInput = form.querySelector('input[type="email"]');
+      const nameInput = form.querySelector('input[name="name"]');
+      const phoneInput = form.querySelector('input[name="phone"]');
+      const emailInput = form.querySelector('input[name="email"]');
+
+      const name = nameInput.value.trim();
+      const phone = phoneInput.value.trim();
       const email = emailInput.value.trim();
 
-      if (email) {
+      if (name && phone && email) {
         modal.showModal();
         form.reset();
       }

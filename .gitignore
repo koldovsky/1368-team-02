@@ -1,23 +1,6 @@
-### macOS ###
-# General
+# Файли середовища та локальні налаштування
+.env*
+
+# Системні файли
 .DS_Store
-.AppleDouble
-.LSOverride
-
-# Default ignored files
-/shelf/
-/workspace.xml
-# Editor-based HTTP Client requests
-/httpRequests/
-# Datasource local storage ignored files
-/dataSources/
-/dataSources.local.xml
-
-# User-specific stuff
-.idea/
-
-#local installed dependencies
-eslint.config.mjs
-node_modules
-package-lock.json
-package.json
+Thumbs.db

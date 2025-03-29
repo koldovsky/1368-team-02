@@ -1,10 +1,43 @@
-/* Anastasiia Mishchenko */
 .footer {
+  background-color: var(--color-background-secondary);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    right: -30px;
+    width: 250px;
+    height: 200px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' width='200' height='200'%3E%3Cpath d='M26.2,85.6c39.2-0.3,66.2-5.3,94.8-20.2c23.8-10.4,48.1-29.4,50-43' stroke='%23c5af93' stroke-width='1.5' fill='none' style='opacity:0.3'/%3E%3Cpath d='M30.2,105.6c35.2-0.3,58.2-7.3,83.8-18.2c19.8-9.4,38.1-22.4,41-31' stroke='%23c5af93' stroke-width='2' fill='none' style='opacity:0.3'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    opacity: 0.2;
+    transform: rotate(10deg);
+    pointer-events: none;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 30px;
+    left: -20px;
+    width: 200px;
+    height: 180px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' width='200' height='200'%3E%3Cpath d='M26.2,125.6c28.2-10.3,48.2-15.3,75.8-20.2c23.8-4.4,58.1-9.4,80-5' stroke='%23c5af93' stroke-width='2' fill='none' style='opacity:0.3'/%3E%3Cpath d='M40.2,145.6c22.2-8.3,42.2-12.3,65.8-15.2c19.8-2.4,48.1-5.4,65-3' stroke='%23c5af93' stroke-width='1.5' fill='none' style='opacity:0.3'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    opacity: 0.2;
+    transform: rotate(-5deg);
+    pointer-events: none;
+  }
+
   .footer__content {
     padding-top: 80px;
     padding-bottom: 30px;
     padding-left: 24px;
     padding-right: 24px;
+    position: relative;
+    z-index: 2;
 
     .footer__logo {
       display: flex;
@@ -13,7 +46,9 @@
 
     .footer__logo img {
       width: 149px;
+      filter: brightness(0) invert(1);
     }
+
     .footer__nav {
       display: flex;
       justify-content: space-between;
@@ -31,53 +66,80 @@
 
           .footer__nav-link {
             font-family: var(--font-primary);
-            color: var(--color-text-primary);
+            color: var(--color-text-inverse);
             text-decoration: none;
-            font-size: 16px;
-            font-weight: 400;
+            font-size: var(--font-size-small);
+            font-weight: var(--font-weight-medium);
             align-items: center;
+            transition: color var(--image-transition-duration) ease-out;
 
             &:hover {
-              color: var(--color-link-hover);
+              color: var(--color-brand-primary);
             }
           }
         }
       }
     }
+
     .footer__subscribe {
       margin-top: 50px;
       padding: 0 15px;
       text-align: center;
 
       .footer__subscribe-input {
-        border-color: var(--color-input-border);
-        background-color: var(--color-input-background);
-        color: var(--color-text-block-title);
+        border: 1px solid var(--color-brand-primary);
+        background-color: rgba(255, 255, 255, 0.05);
+        color: var(--color-text-inverse);
         width: 100%;
         margin-top: 12px;
-        padding: 18px 45px;
-        border: none;
-        font-size: 16px;
+        padding: var(--btn-md-padding);
+        font-size: var(--font-size-default);
         text-align: center;
         outline: none;
+        font-family: var(--font-primary);
       }
 
       .footer__subscribe-button {
         font-family: var(--font-primary);
-        display: block;
-        background-color: var(--color-button-secondary);
-        color: var(--color-button-primary-text);
-        transition: background-color 0.4s ease-in;
-        border: 2px;
+        display: inline-block;
+        background-color: transparent;
+        color: var(--color-white);
+        border: 2px solid var(--color-white);
+        padding: 14px 30px;
         margin-top: 12px;
         cursor: pointer;
-        height: 52px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: var(--font-weight-bold);
+        font-size: 14px;
+        transition: all 0.3s ease;
+        position: relative;
+        z-index: 5;
+        overflow: hidden;
+        border-radius: 0;
         width: 100%;
-        font-weight: 700;
-        font-size: 16px;
 
         &:hover {
-          background-color: var(--color-button-secondary-hover);
+          background-color: var(--color-white);
+          color: var(--color-black);
+          transform: translateY(-3px);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: rgba(255, 255, 255, 0.2);
+          transition: all 0.5s ease;
+          z-index: -1;
+        }
+
+        &:hover::before {
+          left: 100%;
         }
       }
     }
@@ -85,22 +147,30 @@
 
   .footer__separator {
     border: none;
-    border-top: 2px solid #ddd;
-    width: calc(
-      100% - 50px
-    ); /* Adjust width to account for left and right spacing */
+    border-top: 1px solid rgba(197, 175, 147, 0.3);
+    width: calc(100% - 50px);
     margin: 0 auto;
+    position: relative;
+    z-index: 2;
   }
 
   .footer__bottom {
     font-family: var(--font-primary);
-    padding: 20px 0;
+    padding: 20px 24px;
     align-items: center;
     text-align: center;
-    font-size: 14px;
-    color: var(--color-text-secondary);
+    font-size: var(--font-size-caption);
+    color: var(--color-text-tertiary);
+    position: relative;
+    z-index: 2;
+
+    .footer__copyright {
+      color: var(--color-text-tertiary);
+    }
+
     .footer__rights {
-      margin-top: 20px;
+      margin-top: 10px;
+      color: var(--color-text-tertiary);
     }
   }
 
@@ -121,17 +191,20 @@
       .footer__content-flex-item {
         flex: 1;
       }
+
       .footer__subscribe {
         margin-top: 0;
         text-align: left;
       }
     }
+
     .footer__bottom {
       display: flex;
       justify-content: space-between;
       align-items: center;
       text-align: left;
       padding: 20px 32px;
+
       .footer__rights {
         margin-top: 0;
       }

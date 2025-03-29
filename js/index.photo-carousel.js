@@ -1,76 +1,162 @@
 const slides = [
-  '<div><img class="photo-carousel__image" src="img/photo-carousel/photo-carousel-black-lace-bra-closeup.webp" alt="Close-up of a black lace bra"></div>',
-  '<div><img class="photo-carousel__image" src="img/photo-carousel/photo-carousel-black-lace-bra.webp" alt="Black lace bra"></div>',
-  '<div><img class="photo-carousel__image" src="img/photo-carousel/photo-carousel-black-lingerie-set.webp" alt="Black lingerie set"></div>',
-  '<div><img class="photo-carousel__image" src="img/photo-carousel/photo-carousel-white-bra-blazer.webp" alt="White bra under blazer"></div>',
-  '<div><img class="photo-carousel__image" src="img/photo-carousel/photo-carousel-white-combo.webp" alt="White lingerie combination"></div>',
-  '<div><img class="photo-carousel__image" src="img/photo-carousel/photo-carousel-white-combo-balcony.webp" alt="White lingerie set with a balcony bra"></div>',
+  '<div class="photo-carousel__slide"><img class="photo-carousel__image" src="img/photo-carousel/photo-carousel-black-lace-bra-closeup.webp" alt="Close-up of a black lace bra"></div>',
+  '<div class="photo-carousel__slide"><img class="photo-carousel__image" src="img/photo-carousel/photo-carousel-black-lace-bra.webp" alt="Black lace bra"></div>',
+  '<div class="photo-carousel__slide"><img class="photo-carousel__image" src="img/photo-carousel/photo-carousel-black-lingerie-set.webp" alt="Black lingerie set"></div>',
+  '<div class="photo-carousel__slide"><img class="photo-carousel__image" src="img/photo-carousel/photo-carousel-white-bra-blazer.webp" alt="White bra under blazer"></div>',
+  '<div class="photo-carousel__slide"><img class="photo-carousel__image" src="img/photo-carousel/photo-carousel-white-combo.webp" alt="White lingerie combination"></div>',
+  '<div class="photo-carousel__slide"><img class="photo-carousel__image" src="img/photo-carousel/photo-carousel-white-combo-balcony.webp" alt="White lingerie set with a balcony bra"></div>',
 ];
 
 let currentSlideIdx = 0;
 let isTransitioning = false;
+let slideWidth = 0;
+let visibleSlides = 1;
+let cloneCount = 0;
 
-function showSlide() {
-  if (isTransitioning) return;
-  isTransitioning = true;
-  
-  console.log('Showing slide:', currentSlideIdx);
+function initCarousel() {
   const slideContainer = document.querySelector(".photo-carousel__images");
-  const slidesContainer = document.createElement('div');
-  slidesContainer.style.display = 'flex';
-  slidesContainer.style.width = '100%';
-  
-  // Add current slide
-  slidesContainer.innerHTML = slides[currentSlideIdx];
-  
-  // Add responsive slides
-  if (window.matchMedia("(min-width: 479px)").matches) {
-    const secondSlideIdx = (currentSlideIdx + 1) % slides.length;
-    slidesContainer.innerHTML += slides[secondSlideIdx];
-    
-    if (window.matchMedia("(min-width: 768px)").matches) {
-      const thirdSlideIdx = (secondSlideIdx + 1) % slides.length;
-      slidesContainer.innerHTML += slides[thirdSlideIdx];
-      
-      if (window.matchMedia("(min-width: 991px)").matches) {
-        const fourthSlideIdx = (thirdSlideIdx + 1) % slides.length;
-        slidesContainer.innerHTML += slides[fourthSlideIdx];
-        const fifthSlideIdx = (fourthSlideIdx + 1) % slides.length;
-        slidesContainer.innerHTML += slides[fifthSlideIdx];
-      }
+  slideContainer.innerHTML = "";
+
+  slides.forEach((slide, index) => {
+    const slideElement = document.createElement("div");
+    slideElement.innerHTML = slide;
+    slideElement.firstChild.classList.add(`photo-carousel__slide--${index}`);
+    slideElement.firstChild.dataset.index = index;
+    slideContainer.appendChild(slideElement.firstChild);
+  });
+
+  addClones();
+  updateVisibleSlides();
+  scrollToSlide(currentSlideIdx, false);
+}
+
+function addClones() {
+  const slideContainer = document.querySelector(".photo-carousel__images");
+
+  cloneCount = Math.max(5, visibleSlides * 2);
+
+  for (let i = 0; i < cloneCount; i++) {
+    const index = i % slides.length;
+    const original = slideContainer.querySelector(`[data-index="${index}"]`);
+    if (original) {
+      const clone = original.cloneNode(true);
+      clone.classList.add("clone");
+      clone.classList.remove("original");
+      slideContainer.appendChild(clone);
     }
   }
 
-  // Preload images
-  const images = slidesContainer.getElementsByTagName('img');
-  const imagePromises = Array.from(images).map(img => {
-    return new Promise((resolve) => {
-      if (img.complete) resolve();
-      img.onload = resolve;
-    });
-  });
+  for (
+    let i = slides.length - 1;
+    i >= Math.max(0, slides.length - cloneCount);
+    i--
+  ) {
+    const original = slideContainer.querySelector(`[data-index="${i}"]`);
+    if (original) {
+      const clone = original.cloneNode(true);
+      clone.classList.add("clone");
+      clone.classList.remove("original");
+      slideContainer.prepend(clone);
+    }
+  }
 
-  Promise.all(imagePromises).then(() => {
-    slideContainer.innerHTML = slidesContainer.innerHTML;
-    isTransitioning = false;
+  currentSlideIdx = cloneCount;
+  scrollToSlide(currentSlideIdx, false);
+}
+
+function updateVisibleSlides() {
+  if (window.matchMedia("(min-width: 991px)").matches) {
+    visibleSlides = 5;
+  } else if (window.matchMedia("(min-width: 768px)").matches) {
+    visibleSlides = 3;
+  } else if (window.matchMedia("(min-width: 479px)").matches) {
+    visibleSlides = 2;
+  } else {
+    visibleSlides = 1;
+  }
+
+  const slideElements = document.querySelectorAll(".photo-carousel__slide");
+  const containerWidth = document.querySelector(
+    ".photo-carousel__wrapper"
+  ).offsetWidth;
+  slideWidth = containerWidth / visibleSlides;
+
+  slideElements.forEach((slide) => {
+    slide.style.minWidth = `${slideWidth}px`;
   });
+}
+
+function handleTransitionEnd() {
+  const totalOriginalSlides = slides.length;
+
+  if (currentSlideIdx < cloneCount) {
+    const newPosition = totalOriginalSlides + currentSlideIdx;
+    scrollToSlide(newPosition, false);
+  } else if (currentSlideIdx >= cloneCount + totalOriginalSlides) {
+    const offset = currentSlideIdx - cloneCount - totalOriginalSlides;
+    scrollToSlide(cloneCount + (offset % totalOriginalSlides), false);
+  }
+}
+
+function scrollToSlide(index, animate = true) {
+  if (isTransitioning && animate) return;
+
+  currentSlideIdx = index;
+  const position = -currentSlideIdx * slideWidth;
+
+  if (!animate) {
+    slideContainer.style.transition = "none";
+    slideContainer.style.transform = `translateX(${position}px)`;
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        slideContainer.style.transition =
+          "transform 0.8s cubic-bezier(0.25, 1, 0.5, 1)";
+      });
+    });
+
+    return;
+  }
+
+  isTransitioning = true;
+  slideContainer.style.transform = `translateX(${position}px)`;
+
+  setTimeout(() => {
+    isTransitioning = false;
+  }, 800);
 }
 
 function nextSlide() {
-  currentSlideIdx = (currentSlideIdx + 1) % slides.length;
-  showSlide();
+  if (isTransitioning) return;
+  currentSlideIdx++;
+  scrollToSlide(currentSlideIdx);
 }
 
 function prevSlide() {
-  currentSlideIdx = (currentSlideIdx - 1 + slides.length) % slides.length;
-  showSlide();
+  if (isTransitioning) return;
+  currentSlideIdx--;
+  scrollToSlide(currentSlideIdx);
 }
 
-showSlide();
+initCarousel();
 
-const nextButton = document.querySelector(".photo-carousel__button--prev");
-const prevButton = document.querySelector(".photo-carousel__button--next");
-nextButton.addEventListener("click", nextSlide);
+const prevButton = document.querySelector(".photo-carousel__button--prev");
+const nextButton = document.querySelector(".photo-carousel__button--next");
 prevButton.addEventListener("click", prevSlide);
+nextButton.addEventListener("click", nextSlide);
 
-window.addEventListener("resize", showSlide);
+window.addEventListener("resize", () => {
+  updateVisibleSlides();
+  setupInfiniteScroll();
+});
+
+let autoplayInterval = setInterval(nextSlide, 5000);
+
+const carousel = document.querySelector(".photo-carousel");
+carousel.addEventListener("mouseenter", () => {
+  clearInterval(autoplayInterval);
+});
+
+carousel.addEventListener("mouseleave", () => {
+  autoplayInterval = setInterval(nextSlide, 5000);
+});

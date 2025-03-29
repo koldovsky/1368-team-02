@@ -5,11 +5,9 @@
 @import "./index.bestsellers-carousel.css";
 @import "./index.coming-soon.css";
 @import "./index.lookbook.css";
+@import "./index.vacancy-form.css";
 @import "./index.contact-us.css";
 @import "./index.subscribe-confirm-modal.css";
 @import "./index.photo-carousel.css";
 @import "./index.footer.css";
-@import "./index.shopping-cart.css";
-
-
-/* Don't forget to change the order of CSS files: Header → Footer. */ 
+@import "./index.ai.css";
