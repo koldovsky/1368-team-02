@@ -1,0 +1,217 @@
+/* Style for button which open shop menu */
+@keyframes shadow-blink {
+  0% { box-shadow: 0 0 15px #231aa1; }
+  50% { box-shadow: 0 0 20px #929936; }
+  100% { box-shadow: 0 0 15px #231aa1; }
+}
+
+.shop-menu__buy-button {
+  position: fixed;
+  top: 140px;
+  right: 10px;
+  width: 100px;
+  height: 100px;
+  z-index: 1000;
+  background: var(--color-background-secondary);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: shadow-blink 1.5s infinite alternate;
+  box-shadow: 0 0 15px #231aa1;
+  opacity: 0; /* Невидима, але ще існує */
+  pointer-events: none; /* Блокує кліки */
+  transition: opacity 0.3s ease-in-out;
+}
+
+.shop-menu__buy-button.visible {
+  opacity: 1; /* Робимо видимою */
+  pointer-events: auto; /* Вмикаємо кліки */
+}
+.shop-menu__counter {
+    color: white;
+    box-shadow: bisque;
+    font-weight: bold;
+    border-radius: 40%;
+    width: 20px;
+}
+.shop-menu__buy-button__fixed-image {
+  width: 60%;
+  height: auto;
+  filter: invert(1);
+  transition: filter 0.3s ease-in-out;
+  &:hover {
+    filter: invert(0.5);
+  }
+}
+
+/* Style shop menu container and content*/
+/* Overlay to cover the screen */
+.shop-menu__container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* Напівпрозорий фон */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  overflow-y: auto; /* Прокрутка тільки по вертикалі */
+  transition: opacity 0.3s ease-in-out, visibility 0.3s;
+  z-index: 999; /* Показуємо поверх інших елементів */
+  
+}
+
+.shop-menu__container.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.shop-menu__content {
+  background: var(--color-background-secondary);
+  padding: 20px;
+  border-radius: 10px;
+  width: 70%;
+  max-width: 750px;
+  text-align: center;
+}
+
+.shop-menu__buy-button.hidden {
+  display: none;
+}
+
+
+/* Form styling */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-top: 20px;
+}
+.contact-form__header{
+    text-align: center;
+    margin-bottom: 20px;
+    color: oldlace;
+}
+
+.contact-form label {
+    font-weight: bold;
+    color: oldlace;
+}
+.contact-form__input {
+    padding: 10px;
+    border: 1px solid #282828;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #5a5a5a;
+    &:focus {
+        outline: none;
+    }
+}
+.contact-form__input::placeholder {
+    color: #c4c4c4; /* Помаранчевий колір */
+    opacity: 1; /* Робимо його повністю видимим */
+}
+
+.contact-form button {
+    padding: 10px;
+    background: rgb(28, 28, 28);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: rgb(44, 44, 93);
+}
+
+
+
+
+
+.shop-menu__content__products {
+  max-height: 400px; /* Встановіть максимальну висоту контейнера */
+  overflow-y: auto; /* Додає вертикальну прокрутку */
+  display: flex;
+  flex-direction: column; /* Елементи додаються вертикально */
+  justify-content: flex-start; /* Елементи вирівнюються зверху */
+  gap: 10px;
+}
+.shop-menu__product {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #959595;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.shop-menu__product-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.shop-menu__product-info {
+  flex-grow: 1;
+}
+
+.shop-menu__product-name {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.shop-menu__product-price {
+  font-size: 14px;
+  color: #ffffff;
+  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.8); /* Сіра тінь */
+}
+
+.shop-menu__remove-button {
+  background: rgb(85, 85, 85);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.8); /* Сіра тінь */
+}
+
+.shop-menu__counter {
+  background: red;
+  color: white;
+  font-size: 14px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: none;
+}
+
+.shop-menu__counter.visible {
+  display: flex;
+}
+
+.shop-menu__total {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: right;
+  color: aliceblue
+}
+
+.shop-menu__total-amount {
+  color: #ff8000;
+}
