@@ -42,10 +42,7 @@
     height: auto;
     border-radius: 4px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    filter: grayscale(50%);
-    /* Додамо легкий фільтр до зображення */
     opacity: 0.85;
-    /* Трохи зменшимо прозорість для кращого поєднання з фоном */
 }
 
 .handmade__text-content {

@@ -98,6 +98,12 @@
 img {
   display: block;
   max-width: 100%;
+  filter: var(--image-filter-grayscale);
+  transition: filter var(--image-transition-duration) ease-out;
+}
+
+img:hover {
+  filter: var(--image-filter-grayscale-hover);
 }
 
 h1 {
