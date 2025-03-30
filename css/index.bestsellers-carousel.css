@@ -70,6 +70,9 @@
     overflow: visible;
     position: relative;
     box-shadow: none;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
 }
 
 .bestsellers-carousel__frame::before {
@@ -124,7 +127,7 @@
     display: flex;
     justify-content: center;
     gap: 30px;
-    padding: 20px 80px;
+    padding: 20px;
     transition: transform 0.5s ease;
     margin: 0 auto;
     position: relative;
@@ -177,7 +180,7 @@
     border: 2px solid var(--color-white);
     border-radius: 0;
     cursor: pointer;
-    margin: 40px auto 0;
+    margin: 15px auto 0;
 }
 
 .bestsellers-carousel__browse-button:hover {
@@ -201,4 +204,29 @@
 
 .bestsellers-carousel__browse-button:hover::before {
     left: 100%;
+}
+
+.bestsellers-carousel__button {
+  position: relative;
+  z-index: 5;
+  border-radius: 100px;
+  background-color: var(--color-white);
+  color: var(--color-black);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
+}
+
+.bestsellers-carousel__button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.bestsellers-carousel-image__wrapper {
+  text-align: center;
 }
