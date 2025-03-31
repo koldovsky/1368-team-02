@@ -24,7 +24,8 @@
   display: flex;
   justify-content: center;
   transition: all 0.4s ease-out;
-  padding: 0 5px;
+  padding: 0 1.5px;
+  padding-bottom: 1.5px;
 
   &.clone {
     opacity: 1;

@@ -30,8 +30,9 @@ function initCarousel() {
   scrollToSlide(currentSlideIdx, false);
 }
 
+const slideContainer = document.querySelector(".photo-carousel__images");
 function addClones() {
-  const slideContainer = document.querySelector(".photo-carousel__images");
+  
 
   cloneCount = Math.max(5, visibleSlides * 2);
 
@@ -98,6 +99,16 @@ function handleTransitionEnd() {
   }
 }
 
+function setupInfiniteScroll() {
+  const slideContainer = document.querySelector(".photo-carousel__images");
+  const totalSlides = slideContainer.children.length;
+
+  if (currentSlideIdx >= totalSlides - visibleSlides) {
+      currentSlideIdx = 0;
+      scrollToSlide(currentSlideIdx, false);
+  }
+}
+
 function scrollToSlide(index, animate = true) {
   if (isTransitioning && animate) return;
 
@@ -160,3 +171,5 @@ carousel.addEventListener("mouseenter", () => {
 carousel.addEventListener("mouseleave", () => {
   autoplayInterval = setInterval(nextSlide, 5000);
 });
+
+slideContainer.addEventListener("transitionend", handleTransitionEnd);

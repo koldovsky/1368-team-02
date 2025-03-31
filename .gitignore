@@ -4,3 +4,26 @@
 # Системні файли
 .DS_Store
 Thumbs.db
+
+### macOS ###
+# General
+.AppleDouble
+.LSOverride
+
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+
+# User-specific stuff
+.idea/
+
+#local installed dependencies
+eslint.config.mjs
+node_modules
+package-lock.json
+package.json
