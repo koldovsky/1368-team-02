@@ -3,7 +3,7 @@ function init() {
     import('./index.footer.subscribe.js')
     import('./index.coming-soon.js');
     import('./index.subscribe-confirm-modal.js');
-    import('./index.shop-menu.js');
+    // import('./index.shop-menu.js');
     import('./index.bestsellers-carousel.js');
 }
 
