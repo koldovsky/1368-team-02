@@ -1,13 +1,22 @@
-document.querySelectorAll(".bestsellers-carousel__browse-button").forEach(button => {
-    button.addEventListener("click", () => {
-      document.querySelector(".shop-menu__buy-button").classList.add("visible");
-    });
+document.addEventListener("click", (event) => {
+const buyButton = event.target.closest(".bestsellers-carousel__browse-button");
+
+  if (buyButton) {
+    addToCart(buyButton.id);
+
+    // Додаємо невеликий тайм-аут, щоб дочекатися оновлення cartCount
+    setTimeout(() => {
+      if (cartCount > 0) {
+        cartButton.classList.add("visible");
+      }
+    }, 50); // 50 мс достатньо для оновлення DOM
+  }
 });
+
 
 const cartButton = document.querySelector(".shop-menu__buy-button");
 const shopMenu = document.querySelector(".shop-menu__container");
 const cartCounter = document.querySelector(".shop-menu__counter");
-
 const buyButtons = document.querySelectorAll(".bestsellers-carousel__browse-button");
 
 const addBuyButtonListeners = () => {
