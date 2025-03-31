@@ -375,6 +375,9 @@
         display: flex;
         justify-content: flex-end;
         padding-left: 15px;
+        .contact-us__map-iframe {
+          height: 622px;
+        }
       }
     }
   }
