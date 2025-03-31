@@ -24,10 +24,13 @@
   transition: opacity 0.3s ease-in-out;
 }
 
+
 .shop-menu__buy-button.visible {
-  opacity: 1; /* Робимо видимою */
+  opacity: 1; /* Робимо повністю видимою */
   pointer-events: auto; /* Вмикаємо кліки */
 }
+
+
 .shop-menu__counter {
     color: white;
     box-shadow: bisque;
@@ -41,7 +44,7 @@
   filter: invert(1);
   transition: filter 0.3s ease-in-out;
   &:hover {
-    filter: invert(0.5);
+    filter: invert(1);
   }
 }
 
