@@ -5,6 +5,7 @@ function init() {
     import('./index.subscribe-confirm-modal.js');
     // import('./index.shop-menu.js');
     import('./index.bestsellers-carousel.js');
+    import('./index.contact-us-map.js');
 }
 
 const totalPartials = document.querySelectorAll(
