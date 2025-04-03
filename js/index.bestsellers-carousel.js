@@ -1,25 +1,37 @@
 const slides = [
-  `<div class="bestsellers-carousel-image__wrapper">
-    <img class="bestsellers-carousel__image" src="img/bestsellers-carousel/bestsellers_carousel_basic.png">
+  `<div class="bestsellers-carousel__item">
+    <div class="bestsellers-carousel__image-wrapper">
+      <img class="bestsellers-carousel__image" src="img/bestsellers-carousel/bestsellers_carousel_basic.png" alt="Basic">
+    </div>
     <p class="bestsellers-carousel__label">Basic</p>
     <button class="bestsellers-carousel__browse-button" id="bestseller-1">Buy</button>
   </div>`,
-  `<div class="bestsellers-carousel-image__wrapper">
-    <img class="bestsellers-carousel__image" src="img/bestsellers-carousel/bestsellers_carousel_limited.png">
+
+  `<div class="bestsellers-carousel__item">
+    <div class="bestsellers-carousel__image-wrapper">
+      <img class="bestsellers-carousel__image" src="img/bestsellers-carousel/bestsellers_carousel_limited.png" alt="Limited">
+    </div>
     <p class="bestsellers-carousel__label">Limited</p>
     <button class="bestsellers-carousel__browse-button" id="bestseller-2">Buy</button>
   </div>`,
-  `<div class="bestsellers-carousel-image__wrapper">
-    <img class="bestsellers-carousel__image" src="img/bestsellers-carousel/bestsellers_carousel_sets.png">
+
+  `<div class="bestsellers-carousel__item">
+    <div class="bestsellers-carousel__image-wrapper">
+      <img class="bestsellers-carousel__image" src="img/bestsellers-carousel/bestsellers_carousel_sets.png" alt="Sets">
+    </div>
     <p class="bestsellers-carousel__label">Sets</p>
     <button class="bestsellers-carousel__browse-button" id="bestseller-3">Buy</button>
   </div>`,
-  `<div class="bestsellers-carousel-image__wrapper">
-    <img class="bestsellers-carousel__image" src="img/bestsellers-carousel/bestsellers_carousel_swimwear.png">
+
+  `<div class="bestsellers-carousel__item">
+    <div class="bestsellers-carousel__image-wrapper">
+      <img class="bestsellers-carousel__image" src="img/bestsellers-carousel/bestsellers_carousel_swimwear.png" alt="Swimwear">
+    </div>
     <p class="bestsellers-carousel__label">Swimwear</p>
     <button class="bestsellers-carousel__browse-button" id="bestseller-4">Buy</button>
   </div>`
 ];
+
 
 const products = [
   { id: "bestseller-1", name: "Basic Lingerie", price: "49.99$", image: "img/bestsellers-carousel/bestsellers_carousel_basic.png" },
