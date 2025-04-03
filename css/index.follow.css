@@ -1,66 +1,60 @@
 .subscribe {
-    padding: 150px 0;
-    background-color: var(--nav-bg-color);
-    position: relative;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    border-bottom: 2px solid var(--color-white);
-    overflow: hidden;
-}
-
-.subscribe {
-    position: relative;
-    padding: 50px 20px;
-    background-color: rgba(0, 0, 0, 0.2);
-    text-align: center;
+  background-color: var(--nav-bg-color);
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  border-bottom: 2px solid var(--color-white);
+  overflow: hidden;
+  padding: 50px 20px;
+  text-align: center;
 }
 
 .subscribe__blob {
-    position: absolute;
-    top: -30px;
-    left: 50%;
-    width: 100px;
-    height: 100px;
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    transform: translateX(-50%);
-    z-index: 0;
-  }
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+}
 
-  .subscribe__content {
-    position: relative;
-    z-index: 1;
-    max-width: 500px;
-    margin: 0 auto;
-    background: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
+.subscribe__content {
+  position: relative;
+  z-index: 1;
+  max-width: 500px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
 
-  .subscribe__title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
+.subscribe__title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
 
-  .subscribe__description {
-    font-size: 16px;
-    color: #555;
-    margin-bottom: 20px;
-  }
+.subscribe__description {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
 
-  .subscribe__btn {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    color: #fff;
-    background-color: #ff5733;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background .3s ease-in-out;
-  }
+.subscribe__btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #ff5733;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease-in-out;
+}
 
-  .subscribe__btn:hover {
-    background-color: #e04e2a;
-  }
+.subscribe__btn:hover {
+  background-color: #e04e2a;
+}
