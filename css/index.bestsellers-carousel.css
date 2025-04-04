@@ -29,7 +29,7 @@
 }
 
 .bestsellers__container {
-    max-width: 1300px;
+    max-width: 1440px;
     margin: 0 auto;
     padding: 0 40px;
     position: relative;
@@ -183,6 +183,8 @@
     border-radius: 0;
     cursor: pointer;
     margin: 15px auto 0;
+    opacity: 0;
+    transform: translateY(10px);
 }
 
 .bestsellers-carousel__browse-button:hover {
@@ -233,6 +235,7 @@
     overflow: hidden;
     border-radius: 8px;
     text-align: center;
+    position: relative;
   }
 
 @media (min-width: 768px) {
@@ -290,4 +293,24 @@
   .bestsellers-carousel__subtitle {
     font-size: 18px;
   }
+}
+
+.bestsellers-carousel__hover {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.bestsellers-carousel__image-wrapper:hover .bestsellers-carousel__hover {
+  opacity: 1;
+}
+
+.bestsellers-carousel__image-wrapper:hover .bestsellers-carousel__browse-button {
+  opacity: 1;
+  transform: translateY(0);
 }
