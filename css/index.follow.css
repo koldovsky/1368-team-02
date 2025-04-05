@@ -1,4 +1,74 @@
 .subscribe {
+<<<<<<< HEAD
+    padding: 60px 20px;
+    background-color: var(--nav-bg-color);
+    position: relative;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    border-bottom: 2px solid var(--color-white);
+    background-color: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    overflow: hidden;
+}
+
+
+
+.subscribe__blob {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    width: 100px;
+    height: 120px;
+    background-color: rgba(255, 182, 255, 0.1);
+    border-radius: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+  }
+
+  .subscribe__content {
+    position: relative;
+    z-index: 1;
+    max-width: 500px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .subscribe__title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+
+  .subscribe__description {
+    font-size: 16px;
+    color:  #cccccc;
+    margin-bottom: 20px;
+  }
+
+  .subscribe__btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(45deg, #ff6ec4, #7873f5);
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s ease-in-out, transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(255, 110, 196, 0.4);
+  }
+
+  .subscribe__btn:hover {
+    background: linear-gradient(45deg, #7873f5, #ff6ec4);
+    transform: scale(1.05);
+
+=======
   background-color: var(--nav-bg-color);
   position: relative;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
@@ -58,3 +128,4 @@
 .subscribe__btn:hover {
   background-color: #e04e2a;
 }
+>>>>>>> 159f9539e4db98a4f63b691928a9c97d76e4a71d
