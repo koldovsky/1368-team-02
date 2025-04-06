@@ -9,15 +9,62 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
+.lookbook__modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000; /* Sits on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8); /* Black background with opacity */
+}
+
+.lookbook__modal__content {
+  max-width: 90%;
+  max-height: 80%;
+}
+
+.lookbook__modal__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.lookbook__modal__prev,
+.lookbook__modal__next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 32px;
+  cursor: pointer;
+  user-select: none;
+  padding: 5px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+}
+
+.lookbook__modal__prev {
+  left: 10px;
+}
+
+.lookbook__modal__next {
+  right: 10px;
+}
+
 .lookbook::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cpath d='M50,30 C80,70 120,40 150,80' stroke='rgba(192, 160, 98, 0.07)' stroke-width='20' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"),
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cpath d='M50,30 C80,70 120,40 150,80' stroke='rgba(192, 160, 98, 0.07)' stroke-width='20' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cpath d='M20,150 C60,120 100,180 180,130' stroke='rgba(255, 255, 255, 0.05)' stroke-width='25' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-size: 400px, 450px;
   background-position: left top, right bottom;
@@ -27,15 +74,14 @@
 }
 
 .lookbook::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(-3deg);
   width: 90%;
   height: 100%;
-  background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='200' viewBox='0 0 600 200'%3E%3Cpath d='M20,100 C80,70 140,150 200,100 S280,20 340,100 S420,170 500,90 S560,40 580,100' stroke='rgba(192, 160, 98, 0.18)' stroke-width='40' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"),
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='200' viewBox='0 0 600 200'%3E%3Cpath d='M20,100 C80,70 140,150 200,100 S280,20 340,100 S420,170 500,90 S560,40 580,100' stroke='rgba(192, 160, 98, 0.18)' stroke-width='40' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='200' viewBox='0 0 600 200'%3E%3Cpath d='M40,150 C120,180 200,100 300,140 S450,70 550,130' stroke='rgba(255, 255, 255, 0.08)' stroke-width='35' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-size: 1200px, 1000px;
   background-position: center, bottom;
@@ -53,7 +99,7 @@
 }
 
 .lookbook__container::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 20px;
   right: 40px;
@@ -68,7 +114,7 @@
 }
 
 .lookbook__container::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 30px;
   left: 20px;
@@ -89,7 +135,7 @@
 }
 
 .lookbook__header::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -40px;
   left: 50%;
@@ -122,7 +168,7 @@
 }
 
 .lookbook__title::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -8px;
   left: 50%;
@@ -148,7 +194,7 @@
 }
 
 .lookbook__subtitle::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -183,7 +229,7 @@
 }
 
 .lookbook__item:nth-child(odd)::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -15px;
   right: -15px;
@@ -198,7 +244,7 @@
 }
 
 .lookbook__item:nth-child(even)::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -15px;
   left: -15px;
@@ -213,7 +259,7 @@
 }
 
 .lookbook__item:nth-child(3n)::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 10px;
   right: 10px;
@@ -234,6 +280,7 @@
   transition: all 0.5s ease;
   opacity: 0.92;
   border: 4px solid transparent;
+  cursor: pointer;
 }
 
 .lookbook__item:hover .lookbook__image {
