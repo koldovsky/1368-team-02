@@ -32,8 +32,6 @@ function initCarousel() {
 
 const slideContainer = document.querySelector(".photo-carousel__images");
 function addClones() {
-  
-
   cloneCount = Math.max(5, visibleSlides * 2);
 
   for (let i = 0; i < cloneCount; i++) {
@@ -104,8 +102,8 @@ function setupInfiniteScroll() {
   const totalSlides = slideContainer.children.length;
 
   if (currentSlideIdx >= totalSlides - visibleSlides) {
-      currentSlideIdx = 0;
-      scrollToSlide(currentSlideIdx, false);
+    currentSlideIdx = 0;
+    scrollToSlide(currentSlideIdx, false);
   }
 }
 
@@ -161,7 +159,7 @@ window.addEventListener("resize", () => {
   setupInfiniteScroll();
 });
 
-let autoplayInterval = setInterval(nextSlide, 5000);
+let autoplayInterval = setInterval(nextSlide, 3000);
 
 const carousel = document.querySelector(".photo-carousel");
 carousel.addEventListener("mouseenter", () => {
@@ -169,7 +167,7 @@ carousel.addEventListener("mouseenter", () => {
 });
 
 carousel.addEventListener("mouseleave", () => {
-  autoplayInterval = setInterval(nextSlide, 5000);
+  autoplayInterval = setInterval(nextSlide, 3000);
 });
 
 slideContainer.addEventListener("transitionend", handleTransitionEnd);
