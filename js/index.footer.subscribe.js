@@ -1,28 +1,38 @@
-const form = document.querySelector('.footer__form');
-const result = document.querySelector('.footer__form-result');
+const form = document.querySelector(".footer__form");
+const result = document.querySelector(".footer__form-result");
 const emailInput = form.querySelector('input[type="email"]');
+const subscribeModal = document.querySelector(".subscribe-confirm-modal");
 
-// Wait for modal to be loaded
-let subscribeModal = null;
-const modalObserver = new MutationObserver((mutations) => {
-  mutations.forEach((mutation) => {
-    if (mutation.addedNodes.length) {
-      subscribeModal = document.querySelector(".subscribe-confirm-modal");
-      if (subscribeModal) {
-        modalObserver.disconnect();
-      }
+// Initialize modal event listeners
+if (subscribeModal) {
+  const closeBtn = subscribeModal.querySelector(".modal__close");
+  const confirmBtn = subscribeModal.querySelector(".modal__button--confirm");
+
+  const closeModal = () => {
+    subscribeModal.close();
+    document.body.style.overflow = "";
+  };
+
+  if (closeBtn) closeBtn.addEventListener("click", closeModal);
+  if (confirmBtn) confirmBtn.addEventListener("click", closeModal);
+
+  // Close on click outside
+  subscribeModal.addEventListener("click", (e) => {
+    const dialogDimensions = subscribeModal.getBoundingClientRect();
+    if (
+      e.clientX < dialogDimensions.left ||
+      e.clientX > dialogDimensions.right ||
+      e.clientY < dialogDimensions.top ||
+      e.clientY > dialogDimensions.bottom
+    ) {
+      closeModal();
     }
   });
-});
+}
 
-modalObserver.observe(document.body, {
-  childList: true,
-  subtree: true
-});
-
-form.addEventListener('submit', function(e) {
+form.addEventListener("submit", function (e) {
   e.preventDefault();
-  
+
   // Validate email field
   if (!emailInput.value) {
     result.innerHTML = "Please enter your email";
@@ -31,7 +41,7 @@ form.addEventListener('submit', function(e) {
     return;
   }
 
-  if (!emailInput.value.includes('@')) {
+  if (!emailInput.value.includes("@")) {
     result.innerHTML = "Please enter a valid email address";
     result.style.display = "block";
     emailInput.focus();
@@ -45,35 +55,35 @@ form.addEventListener('submit', function(e) {
   const object = Object.fromEntries(formData);
   const json = JSON.stringify(object);
 
-  fetch('https://api.web3forms.com/submit', {
-    method: 'POST',
+  fetch("https://api.web3forms.com/submit", {
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
+      "Content-Type": "application/json",
+      Accept: "application/json",
     },
-    body: json
+    body: json,
   })
-  .then(async (response) => {
-    let json = await response.json();
-    if (response.status == 200) {
-      result.innerHTML = "Form submitted successfully";
-      form.reset();
-      if (subscribeModal) {
-        subscribeModal.showModal();
-        document.body.style.overflow = "hidden";
+    .then(async (response) => {
+      let json = await response.json();
+      if (response.status == 200) {
+        result.innerHTML = "Form submitted successfully";
+        form.reset();
+        if (subscribeModal) {
+          subscribeModal.showModal();
+          document.body.style.overflow = "hidden";
+        }
+      } else {
+        console.log(response);
+        result.innerHTML = json.message || "Something went wrong!";
       }
-    } else {
-      console.log(response);
-      result.innerHTML = json.message || "Something went wrong!";
-    }
-  })
-  .catch(error => {
-    console.log(error);
-    result.innerHTML = "Something went wrong!";
-  })
-  .then(function() {
-    setTimeout(() => {
-      result.style.display = "none";
-    }, 3000);
-  });
+    })
+    .catch((error) => {
+      console.log(error);
+      result.innerHTML = "Something went wrong!";
+    })
+    .then(function () {
+      setTimeout(() => {
+        result.style.display = "none";
+      }, 3000);
+    });
 });
