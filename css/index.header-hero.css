@@ -327,7 +327,42 @@
     }
 
     .hero__title {
-        font-size: 70px;
+        font-size: 60px;
+        margin-bottom: 20px;
+    }
+
+    .hero__subtitle {
+        margin-bottom: 10px;
+    }
+
+    .btn-discover {
+        padding: 10px 20px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 360px) {
+    .hero__content {
+        height: 400px;
+    }
+
+    .hero__title {
+        font-size: 50px;
+        margin-bottom: 15px;
+    }
+
+    .hero__content .background-text {
+        font-size: 60px;
+    }
+
+    .btn-discover {
+        padding: 8px 18px;
+        font-size: 11px;
+    }
+
+    .btn-discover__icon {
+        width: 20px;
+        height: 20px;
     }
 }
 
