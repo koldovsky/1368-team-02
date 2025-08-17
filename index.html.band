@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+    <html lang="uk">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Музичні гурти</title>
+            <link rel="stylesheet" href="styles.css">
+            <script src="index.js" defer></script>
+        </head>
+    </html>
+    <body>
+        <header>
+            <h1>Музичні гурти</h1>
+            <p>Музичні гурти завжди є популярними, великій кількості молоді подобаються різні гурти з різними стилями музики. На цьому сайті ви зможете побачити, що подобається сучасній молоді.</p>
+            <naw>
+                <ul>
+                    <li> <a href="index.html">Головна</a></li>
+                    <li> <a href="bands.html">Гурти</a></li>
+                    <li> <a href="albums.html">Альбоми</a></li>
+
+                </ul>
+            </naw>
+            <form id="search-form">
+                <input type="text" id="search-input" placeholder="Пошук гуртів...">
+                <button type="submit">Пошук</button>
+            </form>
+            <div id="search-results"></div>
+            <div id="error-message"></div>
+            <div id="loading-indicator" style="display: none; text-align: center;">
+                <img src="loading.gif" alt="Завантаження...">
+            </div>
+            <div id="band-list"></div>
+            <div id="album-list"></div>
+            <div id="band-details"></div>
+            <div id="album-details"></div>
+            <div id="band-albums"></div>
+        </div>
+            <div id="band-members"></div>
+            <div id="band-history"></div>
+            <div id="band-similar"></div>
+            <div id="band-videos"></div>
+            <div id="band-photos"></div>
+        </header>
+        
+    </body>
